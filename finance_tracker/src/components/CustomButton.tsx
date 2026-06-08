@@ -1,5 +1,6 @@
 import { ActivityIndicator, Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
 import { colors } from '../theme/colors';
+import { fonts } from '../theme/fonts';
 
 interface CustomButtonProps {
   title: string;
@@ -7,6 +8,7 @@ interface CustomButtonProps {
   loading?: boolean;
   variant?: 'primary' | 'secondary' | 'danger';
   style?: ViewStyle;
+  accessibilityLabel?: string;
 }
 
 export function CustomButton({
@@ -15,12 +17,15 @@ export function CustomButton({
   loading = false,
   variant = 'primary',
   style,
+  accessibilityLabel,
 }: CustomButtonProps) {
   const isPrimary = variant === 'primary';
   const isDanger = variant === 'danger';
 
   return (
     <Pressable
+      accessibilityLabel={accessibilityLabel || title}
+      accessibilityRole="button"
       onPress={onPress}
       disabled={loading}
       style={[
@@ -65,8 +70,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.surface,
+    fontFamily: fonts.bold,
     fontSize: 15,
-    fontWeight: '700',
   },
   secondaryTitle: {
     color: colors.primary,

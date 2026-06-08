@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme/colors';
+import { fonts } from '../theme/fonts';
 import { spacing } from '../theme/spacing';
 
 interface EmptyStateProps {
@@ -37,11 +38,12 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.text,
+    fontFamily: fonts.extraBold,
     fontSize: 17,
-    fontWeight: '800',
   },
   message: {
     color: colors.muted,
+    fontFamily: fonts.regular,
     fontSize: 14,
     marginTop: spacing.xs,
     textAlign: 'center',

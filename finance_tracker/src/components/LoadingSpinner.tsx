@@ -1,5 +1,6 @@
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme/colors';
+import { fonts } from '../theme/fonts';
 import { spacing } from '../theme/spacing';
 
 export function LoadingSpinner({ message = 'Loading...' }: { message?: string }) {
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
   },
   message: {
     color: colors.muted,
+    fontFamily: fonts.regular,
     fontSize: 14,
   },
 });
